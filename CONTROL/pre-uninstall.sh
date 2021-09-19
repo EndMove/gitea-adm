@@ -4,6 +4,7 @@ echo "Gitea Uninstall: pre-uninstall"
 
 # Environement variables
 GITEA_DATA_PATH="/volume1/Docker/Gitea"
+GITEA_VERSION=1.15.2
 GITEA_CONTAINER=$(docker container ls -a | grep Gitea | awk '{print $1}')
 
 # Force shutdown of the container and delete the image
@@ -17,7 +18,7 @@ fi
 
 case "$APKG_PKG_STATUS" in
   uninstall)
-    GITEA_IMAGE=$(docker images | grep gitea/gitea | grep latest | awk '{print $3}')
+    GITEA_IMAGE=$(docker images | grep gitea/gitea | grep $GITEA_VERSION | awk '{print $3}')
     # REMOVE docker image on uninstalling
     echo "Gitea Uninstall: removing docker image"
     echo "    - $GITEA_IMAGE"
