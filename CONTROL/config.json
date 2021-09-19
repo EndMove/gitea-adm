@@ -15,7 +15,7 @@
   },
   "adm-desktop":{
     "app":{
-      "port":13000,
+      "port":3100,
       "protocol":"https",
       "type":"custom",
       "url":"/" 
@@ -37,8 +37,8 @@
       "stop-order":40
     },
     "port":[
-      "T3000",
-      "T3022"
+      "T3100",
+      "T3122"
     ]
   }
 }
