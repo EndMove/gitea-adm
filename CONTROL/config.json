@@ -1,0 +1,44 @@
+{
+  "general":{
+    "package":"gitea-docker",
+    "name":"Gitea",
+    "version":"1.0.1.r01",
+    "depends":[
+      "docker-ce(>=20.10.2.r2)"
+    ],
+    "developer":"Gitea",
+    "maintainer":"EndMove",
+    "email":"contact@endmove.eu",
+    "website":"https://gitea.io/",
+    "architecture":"x86-64",
+    "firmware":"3.1.0"
+  },
+  "adm-desktop":{
+    "app":{
+      "port":13000,
+      "protocol":"https",
+      "type":"custom",
+      "url":"/" 
+    },
+    "privilege":{
+      "accessible":"users", 
+      "customizable":true 
+    }
+  },
+  "register":{
+    "share-folder":[
+      {
+        "name":"Docker",
+        "description":"Data and files directory for Docker Apps"
+      }           
+    ],
+    "boot-priority":{
+      "start-order":60,
+      "stop-order":40
+    },
+    "port":[
+      "T3000",
+      "T3022"
+    ]
+  }
+}
