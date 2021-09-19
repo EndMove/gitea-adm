@@ -5,7 +5,7 @@ echo "Gitea Install: post-install"
 # Environement variables
 GITEA_DATA_PATH="/volume1/Docker/Gitea"
 GITEA_CONTAINER=Gitea
-GITEA_VERSION=1.15.2
+GITEA_VERSION=$(cat $APKG_PKG_DIR/gitea_version)
 
 # Pull the container image
 echo "Gitea Install: fetching data"

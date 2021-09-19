@@ -1,1 +1,7 @@
-Gitea Desc...
+Gitea is an Opensource solution for lightweight and fast code hosting written in Go. It is published under the MIT license.
+Gitea current version: 1.15.2.
+
+[WARNING]
+This application requires a valid domain name and SSL certificate. Indeed, a Git code manager requires these fundamental elements to work properly and securely.
+
+[SETUP]
