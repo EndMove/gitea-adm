@@ -9,10 +9,10 @@ You can access the admin panel through : "https://your-domain-name:3100".
 
 [SETUP]
 # Database
-You have two valid choices : don't touch anything and use an embedded database (SQLite3) or use (MySQL) and the ADM database. Be careful, to use the ADM database you must activate the MariaDB remote access.
+You have two valid choices : don't touch anything and use an embedded database (SQLite3) or use (MySQL) and the ADM database. Be careful, to use the ADM database you must activate the MariaDB remote access and use the server ip address.
 
 # General configuration
-Indicate the title of the site by default "Gitea: Git with a cup of tea" and replace "your-domain-name" by the domain name covered by your SSL certificate. Be careful not to touch the ports defined in the configuration.
+Indicate the title of the site, by default "Gitea : Git with a cup of tea", replace "localhost" by your domain name everywhere in the configuration and in "Gitea base URL" indicate "https://localhost:3100/" by replacing the localhost. Be careful not to touch the ports defined in the configuration.
 
 # Email settings
 It is advisable to use an SMTP server to secure Gitea and keep your development teams informed. Indicate the port of your SMTP server in the hostname configuration e.g. "smtp.endmove.eu:587".
@@ -22,6 +22,9 @@ Gitea exposes HTTPS port 3100-tcp and SSH port 3122-tcp on your server.
 
 [CONFIG FILES]
 Gitea configuration files are available in the folder: "volume1/Docker/Gitea" the main configuration file is available in "Gitea/gitea/conf/app.ini".
+
+[GITHUB]
+Find the Gitea-ADM repository on GitHub by following this link: https://github.com/EndMove/gitea-adm
 
 -----------------------------------------------------------
 

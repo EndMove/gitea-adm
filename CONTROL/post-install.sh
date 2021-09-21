@@ -16,11 +16,8 @@ echo "Gitea Install: creating container"
 docker create -i -t --name=$GITEA_CONTAINER \
   --publish 3122:22 --publish 3100:3000 \
   --env GITEA__server__PROTOCOL='https' \
-  --env GITEA__server__ROOT_URL='https://your-domain-name:3100' \
   --env GITEA__server__CERT_FILE='/ssl/ssl.crt' \
   --env GITEA__server__KEY_FILE='/ssl/ssl.key' \
-  --env GITEA__openid__ENABLE_OPENID_SIGNIN='false' \
-  --env GITEA__openid__ENABLE_OPENID_SIGNUP='false' \
   --restart=unless-stopped \
   --volume $GITEA_DATA_PATH:/data \
   --volume /usr/builtin/etc/certificate/:/ssl/:ro \
