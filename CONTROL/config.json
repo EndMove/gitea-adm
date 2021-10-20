@@ -11,7 +11,7 @@
     "email":"contact@endmove.eu",
     "website":"https://gitea.io/",
     "architecture":"x86-64",
-    "firmware":"3.1.0"
+    "firmware":"3.5.0"
   },
   "adm-desktop":{
     "app":{

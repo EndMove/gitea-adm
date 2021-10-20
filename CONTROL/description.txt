@@ -12,7 +12,7 @@ You can access the admin panel through : "https://your-domain-name:3100".
 You have two valid choices : don't touch anything and use an embedded database (SQLite3) or use (MySQL) and the ADM database. Be careful, to use the ADM database you must activate the MariaDB remote access and use the server ip address.
 
 # General configuration
-Indicate the title of the site, by default "Gitea : Git with a cup of tea", replace "localhost" by your domain name everywhere in the configuration and in "Gitea base URL" indicate "https://localhost:3100/" by replacing the localhost. Be careful not to touch the ports defined in the configuration.
+Indicate the title of the site, by default "Gitea : Git with a cup of tea", replace "localhost" by your domain name everywhere in the configuration and in "Gitea base URL" indicate "https://localhost:3100/" by replacing the localhost [<!> web port: 3100 <!>]. Be careful not to touch the ports defined in the configuration.
 
 # Email settings
 It is advisable to use an SMTP server to secure Gitea and keep your development teams informed. Indicate the port of your SMTP server in the hostname configuration e.g. "smtp.endmove.eu:587".

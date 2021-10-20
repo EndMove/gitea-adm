@@ -1,6 +1,6 @@
 # gitea-adm
 
-__Gitea version__: _`1.15.2`_
+__Gitea version__: _`1.15.4`_
 
 ![GitHub license](https://img.shields.io/badge/license-GPL--3.0-%23fe7d37) ![GitHub last commit](https://img.shields.io/github/last-commit/EndMove/gitea-adm)
 
@@ -18,7 +18,7 @@ This application uses the docker package available [here](https://github.com/go-
 
 - application docker-ce (>=20.10.2.r2) ;
 - server with an x86-64 architecture ;
-- ADM (>=3.1.0) ;
+- ADM (>=3.5.0) ;
 
 ## Installation
 
@@ -34,6 +34,10 @@ __:warning: This application is not an Android application !__
 ## Configuration folder
 
 This application will create a folder in `/volume1/Docker/Gitea`, this folder will contain all configuration files and the embedded database if you use it.
+
+## Configuration
+
+All information related to the configuration of the application on an ASUSTOR environment is available in the application description. Either in `/CONTROL/description.txt`.
 
 ## How to update Gitea for ADM ?
 
