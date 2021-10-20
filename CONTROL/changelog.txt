@@ -1,2 +1,2 @@
 Version: 1.0.0.r01
-- Gitea 1.15.2 first release.
+- Gitea 1.15.4 first release.
