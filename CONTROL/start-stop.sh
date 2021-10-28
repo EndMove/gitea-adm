@@ -6,19 +6,19 @@ GITEA_CONTAINER=Gitea
 case "$1" in
   start)
     # Starting gitea
-    echo "Gitea Start: Starting service..."
+    echo "gitea-adm: Starting service..."
     docker start $GITEA_CONTAINER
     sleep 3
     ;;
   stop)
     # Stopping gitea
-    echo "Gitea Stop: Stopping service..."
+    echo "gitea-adm: Stopping service..."
     docker stop $GITEA_CONTAINER
     sleep 3
     ;;
   relaod)
     # Reloading gitea
-    echo "Gitea Reload: Reloading service..."
+    echo "gitea-adm: Reloading service..."
     docker stop $GITEA_CONTAINER
     sleep 6
     docker start $GITEA_CONTAINER

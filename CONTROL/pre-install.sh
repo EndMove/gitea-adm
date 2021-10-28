@@ -1,3 +1,3 @@
 #!/bin/sh
 
-echo "Gitea Install: pre-install"
+echo "gitea-adm: --== pre-install ==--"

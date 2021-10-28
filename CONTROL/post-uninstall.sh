@@ -1,3 +1,3 @@
 #!/bin/sh
 
-echo "Gitea Uninstall: post-uninstall"
+echo "gitea-adm: --== post-uninstall ==--"

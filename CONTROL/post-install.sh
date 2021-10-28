@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo "Gitea Install: post-install"
+echo "gitea-adm: --== post-install ==--"
 
 # Environement variables
 GITEA_DATA_PATH="/volume1/Docker/Gitea"
@@ -8,11 +8,11 @@ GITEA_CONTAINER=Gitea
 GITEA_VERSION=$(cat $APKG_PKG_DIR/gitea_version)
 
 # Pull the container image
-echo "Gitea Install: fetching data"
+echo "gitea-adm: Fetching data"
 docker pull gitea/gitea:$GITEA_VERSION
 
 # Installing creating container
-echo "Gitea Install: creating container"
+echo "gitea-adm: Creating container"
 docker create -i -t --name=$GITEA_CONTAINER \
   --publish 3122:22 --publish 3100:3000 \
   --env GITEA__server__PROTOCOL='https' \
@@ -24,21 +24,12 @@ docker create -i -t --name=$GITEA_CONTAINER \
   gitea/gitea:$GITEA_VERSION
 
 # Starting container
-echo "Gitea Install: strating container"
+echo "gitea-adm: Strating container"
 docker start $GITEA_CONTAINER
 
-case "$APKG_PKG_STATUS" in
-  upgrade)
-    GITEA_IMAGE=$(docker images | grep gitea/gitea | grep -v $GITEA_VERSION | awk '{print $3}')
-    # REMOVE old docker image on UPGRADE
-    echo "Gitea Upgrade: removing old docker image"
-    echo "    - $GITEA_IMAGE"
-    if [ ! -z $GITEA_IMAGE ]; then 
-      docker rmi -f $GITEA_IMAGE
-    fi
-    ;;
-  *)
-    ;;
-esac
+# Say update is done
+if [ "$APKG_PKG_STATUS" == "upgrade" ]; then
+  echo "gitea-adm: Upgrade done"
+fi
 
 exit 0
