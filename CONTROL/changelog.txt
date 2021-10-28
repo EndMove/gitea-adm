@@ -1,6 +1,2 @@
-Version: 1.0.2.r01
-- Update to Gitea 1.15.5 (https://github.com/go-gitea/gitea/releases/tag/v1.15.5).
-- Fix old docker image suppression.
-
-Version: 1.0.1.r01
-- Gitea 1.15.4 first release.
+Version: 1.15.5.r01
+- Gitea 1.15.5 first release (https://github.com/go-gitea/gitea/releases/tag/v1.15.5).
