@@ -17,7 +17,7 @@ This application uses the docker package available [here](https://github.com/go-
 ## Requirements
 
 - application docker-ce (>=20.10.2.r2) ;
-- server with an x86-64 architecture ;
+- server with an x86-64 or arm64 architecture ;
 - ADM (>=3.5.0) ;
 
 ## Installation
