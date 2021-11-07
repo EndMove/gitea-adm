@@ -1,2 +1,5 @@
+Version: 1.15.6.r01
+- Gitea 1.15.6, patching bug (https://github.com/go-gitea/gitea/releases/tag/v1.15.6).
+
 Version: 1.15.5.r01
 - Gitea 1.15.5 first release (https://github.com/go-gitea/gitea/releases/tag/v1.15.5).
