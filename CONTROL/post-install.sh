@@ -18,6 +18,7 @@ docker create -i -t --name=$GITEA_CONTAINER \
   --env GITEA__server__PROTOCOL='https' \
   --env GITEA__server__CERT_FILE='/ssl/ssl.crt' \
   --env GITEA__server__KEY_FILE='/ssl/ssl.key' \
+  --env USER_UID=0 \
   --restart=unless-stopped \
   --volume $GITEA_DATA_PATH:/data \
   --volume /usr/builtin/etc/certificate/:/ssl/:ro \
