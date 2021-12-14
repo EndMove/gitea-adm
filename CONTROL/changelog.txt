@@ -1,3 +1,7 @@
+Version: 1.15.7.r01
+- Fix some bugs.
+- Gitea 1.15.5 first release (https://github.com/go-gitea/gitea/releases/tag/v1.15.7).
+
 Version: 1.15.6.r02
 - Fixed Gitea (SSL) web server startup problem due to ADM update 4.0.0.RN53.
 
