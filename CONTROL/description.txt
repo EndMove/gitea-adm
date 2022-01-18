@@ -1,30 +1,52 @@
 Gitea is an Opensource solution for lightweight and fast code hosting written in Go. It is published under the MIT license.
-Gitea current version: 1.15.6 - Work with an HTTPS connection.
+Gitea current version: 1.15.10 - Work with an HTTPS connection.
 
-[WARNING]
-This application requires a valid domain name and SSL certificate. Indeed, a Git code manager requires these fundamental elements to work properly and securely. Add your certificate and domain to ADM.
+!!! NEW !!! : Now supports the migration from the old iGi Gitea to this one.
+
+[INFORMATIONS]
+This application requires a valid domain name and SSL certificate. Indeed, a Git code manager requires these fundamental elements to work properly and securely. Add your certificate and domain to ADM. It is also possible to use the default certificate of ADM and the subdomain provided by asustor see (https://www.myasustor.com/).
+
 
 [ADMIN PANEL]
 You can access the admin panel through : "https://your-domain-name:3100".
 
+
 [SETUP]
-# Database
+(+) Database
 You have two valid choices : don't touch anything and use an embedded database (SQLite3) or use (MySQL) and the ADM database. Be careful, to use the ADM database you must activate the MariaDB remote access and use the server ip address.
 
-# General configuration
-Indicate the title of the site, by default "Gitea : Git with a cup of tea", replace "localhost" by your domain name everywhere in the configuration and in "Gitea base URL" indicate "https://localhost:3100/" by replacing the localhost [<!> web port: 3100 <!>]. Be careful not to touch the ports defined in the configuration.
+(+) General configuration
+Indicate the title of the site, by default "Gitea : Git with a cup of tea", replace "localhost" by your domain name everywhere in the configuration and in "Gitea base URL" indicate "https://localhost:3100/" by replacing the localhost [<!> web port: 3100 <!>]. Be careful not to touch the ports defined in the configuration and configuration file.
 
-# Email settings
+(+) Email settings
 It is advisable to use an SMTP server to secure Gitea and keep your development teams informed. Indicate the port of your SMTP server in the hostname configuration e.g. "smtp.endmove.eu:587".
+
 
 [PORTs]
 Gitea exposes HTTPS port 3100-tcp and SSH port 3122-tcp on your server.
 
+
 [CONFIG FILES]
 Gitea configuration files are available in the folder: "volume1/Docker/Gitea" the main configuration file is available in "Gitea/gitea/conf/app.ini".
+It is necessary to restart Gitea to save the changes. If you want to change the default installation URL or disable HTTPS please refer to the [SENSITIVE CONFIG] section.
+
+
+[SENSITIVE CONFIG]
+To change the "HTTP protocol", "installation url" please follow the instructions below:
+
+1. Uninstall Gitea via APP CENTRAL, the "Docker/Gitea" folder will be automatically kept.
+2. Open the configuration file "Docker/Gitea/gitea/conf/app.ini" and configure the following parameters: PROTOCOL, ROOT_URL.
+3. Save your changes and install Gitea via EndMove on APP CENTRAL.
+
+When reinstalling, your new settings will be applied to Gitea and the Docker container.
+
 
 [GITHUB]
 Find the Gitea-ADM repository on GitHub by following this link: https://github.com/EndMove/gitea-adm
+
+
+[ISSUES]
+Do not hesitate to report any problem or ask for help by following this link: https://github.com/EndMove/gitea-adm/issues
 
 -----------------------------------------------------------
 
