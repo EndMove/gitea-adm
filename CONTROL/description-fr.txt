@@ -1,7 +1,7 @@
 Gitea est une solution Opensource d'hébergement de code léger et rapide écrite en Go. Elle est publiée sous la licence MIT.
 Version actuelle de Gitea : 1.15.10 - Fonctionne avec une connexion HTTPS.
 
-! !! NOUVEAU ! !! : Supporte maintenant la migration de l'ancien iGi Gitea vers celui-ci.
+!!! NOUVEAU !!! : Supporte maintenant la migration de l'ancien iGi Gitea vers celui-ci.
 
 [INFORMATION]
 Cette application nécessite un nom de domaine valide et un certificat SSL. En effet, un gestionnaire de code Git nécessite ces éléments fondamentaux pour fonctionner correctement et en toute sécurité. Ajoutez votre certificat et votre domaine à ADM. Il est également possible d'utiliser le certificat par défaut d'ADM et le sous-domaine fourni par asustor voir (https://www.myasustor.com/).
@@ -16,10 +16,16 @@ Vous pouvez accéder au panneau d'administration par : "https://your-domain-name
 Vous avez deux choix possibles : ne rien toucher et utiliser une base de données embarquée (SQLite3) ou utiliser (MySQL) et la base de données ADM. Attention, pour utiliser la base de données ADM vous devez activer l'accès distant MariaDB et utiliser l'adresse ip du serveur.
 
 (+) Configuration générale
-Indiquez le titre du site, par défaut "Gitea : Git avec une tasse de thé", remplacez "localhost" par votre nom de domaine partout dans la configuration et dans "Gitea base URL" indiquez "https://localhost:3100/" en remplaçant le localhost [<!> port web : 3100 <!>]. Attention à ne pas toucher aux ports définis dans la configuration et le fichier de configuration.
+Indiquez le titre du site, par défaut "Gitea : Git with a cup of tea", remplacez "localhost" par votre nom de domaine partout dans la configuration. Attention pour le paramètre "Gitea base URL" remplacer "https://localhost:3000/" par "https://your-domain:3100/" (utiliser le port 3100 pour l'URL de base). Laisser les autres paramètres de port sur 22 et 3000.
 
-(+) Paramètres de messagerie
+(+) Paramètres de l'email
 Il est conseillé d'utiliser un serveur SMTP pour sécuriser Gitea et tenir informé vos équipes de développement. Indiquez le port de votre serveur SMTP dans la configuration du nom d'hôte, par exemple "smtp.endmove.eu:587".
+
+(+) Compte administrateur
+En bas de la page de configuration, vous trouverez la section de configuration du compte administrateur, configurez-le correctement.
+
+(-) Si vous échouez à l'installation...
+Eteignez l'application et supprimez le dossier "/volume1/Docker/Gitea", puis démarrez l'application et répétez la configuration.
 
 
 [PORTs]
@@ -27,18 +33,7 @@ Gitea expose le port HTTPS 3100-tcp et le port SSH 3122-tcp sur votre serveur.
 
 
 [FILES DE CONFIGURATION]
-Les fichiers de configuration de Gitea sont disponibles dans le dossier : "/volume1/Docker/Gitea" le fichier de configuration principal est disponible dans "./gitea/conf/app.ini".
-Il est nécessaire de redémarrer Gitea pour enregistrer les changements. Si vous voulez changer l'URL d'installation par défaut ou désactiver HTTPS, veuillez vous référer à la section [SENSITIVE CONFIG].
-
-
-[CONFIGURATION SENSIBLE].
-Pour modifier le "protocole HTTP", "l'URL d'installation", veuillez suivre les instructions ci-dessous :
-
-1. Désinstallez Gitea via APP CENTRAL, le dossier "/volume1/Docker/Gitea" sera automatiquement conservé.
-2. Ouvrez le fichier de configuration "./gitea/conf/app.ini" et configurez les paramètres suivants : PROTOCOLE, ROOT_URL.
-3. Sauvegardez vos modifications et installez Gitea via EndMove sur APP CENTRAL.
-
-Lors de la réinstallation, vos nouveaux paramètres seront appliqués à Gitea et au conteneur Docker.
+Les fichiers de configuration de Gitea sont disponibles dans le dossier : "/volume1/Docker/Gitea" le fichier de configuration principal est disponible dans "./gitea/conf/app.ini". Il est nécessaire de redémarrer Gitea pour enregistrer les changements.
 
 
 [GITHUB]
@@ -53,6 +48,3 @@ N'hésitez pas à signaler tout problème ou à demander de l'aide en suivant ce
 Mais pourquoi utiliser Gitea ?
 
 Gitea est simple, rapide et puissant, c'est garder votre code sur VOTRE SERVEUR, pouvoir travailler avec votre équipe SANS CONNEXION INTERNET, avoir accès à une quantité infinie de dépôts privés sans jamais avoir à payer. Un rêve pour un développeur.
-
-*** Traduit avec www.DeepL.com/Translator (version gratuite) ***
-

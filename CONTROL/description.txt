@@ -16,10 +16,16 @@ You can access the admin panel through : "https://your-domain-name:3100".
 You have two valid choices : don't touch anything and use an embedded database (SQLite3) or use (MySQL) and the ADM database. Be careful, to use the ADM database you must activate the MariaDB remote access and use the server ip address.
 
 (+) General configuration
-Indicate the title of the site, by default "Gitea : Git with a cup of tea", replace "localhost" by your domain name everywhere in the configuration and in "Gitea base URL" indicate "https://localhost:3100/" by replacing the localhost [<!> web port: 3100 <!>]. Be careful not to touch the ports defined in the configuration and configuration file.
+Indicate the title of the site, by default "Gitea : Git with a cup of tea", replace "localhost" by your domain name everywhere in the configuration. Be careful for the "Gitea base URL" parameter replace "https://localhost:3000/" by "https://your-domain:3100/" (use port 3100 for the base URL). leave the other port parameters on 22 and 3000.
 
 (+) Email settings
 It is advisable to use an SMTP server to secure Gitea and keep your development teams informed. Indicate the port of your SMTP server in the hostname configuration e.g. "smtp.endmove.eu:587".
+
+(+) Administrator account
+At the bottom of the configuration page you will find the administrator account configuration section, set it up properly.
+
+(-) If you fail the install...
+Turn off the application and delete the "/volume1/Docker/Gitea" folder, then start the application and repeat the configuration.
 
 
 [PORTs]
@@ -27,18 +33,7 @@ Gitea exposes HTTPS port 3100-tcp and SSH port 3122-tcp on your server.
 
 
 [CONFIG FILES]
-Gitea configuration files are available in the folder: "/volume1/Docker/Gitea" the main configuration file is available in "./gitea/conf/app.ini".
-It is necessary to restart Gitea to save the changes. If you want to change the default installation URL or disable HTTPS please refer to the [SENSITIVE CONFIG] section.
-
-
-[SENSITIVE CONFIG]
-To change the "HTTP protocol", "installation url" please follow the instructions below:
-
-1. Uninstall Gitea via APP CENTRAL, the "/volume1/Docker/Gitea" folder will be automatically kept.
-2. Open the configuration file "./gitea/conf/app.ini" and configure the following parameters: PROTOCOL, ROOT_URL.
-3. Save your changes and install Gitea via EndMove on APP CENTRAL.
-
-When reinstalling, your new settings will be applied to Gitea and the Docker container.
+Gitea configuration files are available in the folder: "/volume1/Docker/Gitea" the main configuration file is available in "./gitea/conf/app.ini". It is necessary to restart Gitea to save the changes.
 
 
 [GITHUB]

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Environement variables
+# Environment variables
 GITEA_CONTAINER=Gitea
 
 case "$1" in

@@ -10,12 +10,8 @@ GITEA_CONTAINER=Gitea
 GITEA_UID=999
 GITEA_GID=999
 
-# Container configuration variables (default)
-CONFIG_PROTOCOL='https'
-CONFIG_URL='https://localhost:3100/'
-
 # Checking the configuration to install according to the user's settings
-if [ -e ${GITEA_DATA_PATH}${GITEA_DATA_PATH} ]; then
+if [ -d ${GITEA_DATA_PATH}${GITEA_CONFIG_PATH} ]; then
   cd ${GITEA_DATA_PATH}${GITEA_CONFIG_PATH} || exit 1
 
   # Backing configuration
@@ -31,13 +27,6 @@ if [ -e ${GITEA_DATA_PATH}${GITEA_DATA_PATH} ]; then
     sed -i 's/\(RUN_USER =\).*/RUN_USER = git/' app.ini
     chown -R $GITEA_UID:$GITEA_GID ../../../Gitea
   fi
-
-  # Retrieving
-  echo "gitea-adm: Retrieving old data..."
-  # - PROTOCOL
-  CONFIG_PROTOCOL=$(cat app.ini | grep PROTOCOL | awk '{print $3}')
-  # - INSTALLATION URL
-  CONFIG_URL=$(cat app.ini | grep ROOT_URL | awk '{print $3}')
 fi
 
 # Pull the container image
@@ -48,8 +37,7 @@ docker pull gitea/gitea:$GITEA_VERSION
 echo "gitea-adm: Creating container"
 docker create -i -t --name=$GITEA_CONTAINER \
   --publish 3122:22 --publish 3100:3000 \
-  --env GITEA__server__PROTOCOL="${CONFIG_PROTOCOL}" \
-  --env GITEA__server__ROOT_URL="${CONFIG_URL}" \
+  --env GITEA__server__PROTOCOL='https' \
   --env GITEA__server__CERT_FILE='/ssl/ssl.crt' \
   --env GITEA__server__KEY_FILE='/ssl/ssl.key' \
   --env USER_UID=$GITEA_UID \
