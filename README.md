@@ -1,6 +1,6 @@
 # gitea-adm
 
-__Gitea version__: _`1.15.9`_
+__Gitea version__: _`1.15.10`_
 
 ![GitHub license](https://img.shields.io/badge/license-GPL--3.0-%23fe7d37) ![GitHub last commit](https://img.shields.io/github/last-commit/EndMove/gitea-adm)
 
@@ -33,7 +33,7 @@ __:warning: This application is not an Android application !__
 
 ## Configuration folder
 
-This application will create a folder in `/volume1/Docker/Gitea`, this folder will contain all configuration files and the embedded database if you use it.
+This application will create a folder in `/volume1/Docker/Gitea`, this folder will contain all configuration files, and the embedded database if you use it.
 
 ## Configuration
 

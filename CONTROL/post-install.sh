@@ -2,7 +2,7 @@
 
 echo "gitea-adm: --== post-install ==--"
 
-# Environement variables
+# Environment variables
 GITEA_VERSION=$(cat $APKG_PKG_DIR/gitea_version)
 GITEA_DATA_PATH='/volume1/Docker/Gitea'
 GITEA_CONFIG_PATH='/gitea/conf'
@@ -12,14 +12,14 @@ GITEA_GID=999
 
 # Container configuration variables (default)
 CONFIG_PROTOCOL='https'
-CONFIG_URL="https://localhost:3100/"
+CONFIG_URL='https://localhost:3100/'
 
 # Checking the configuration to install according to the user's settings
-if [ -e ${GITEA_DATA_PATH}${GITEA_CONFIG_FILE} ]; then
-  cd ${GITEA_DATA_PATH}${GITEA_CONFIG_FILE}
+if [ -e ${GITEA_DATA_PATH}${GITEA_DATA_PATH} ]; then
+  cd ${GITEA_DATA_PATH}${GITEA_CONFIG_PATH} || exit 1
 
-  # Backuping configuration
-  if [ $APKG_PKG_STATUS == 'upgrade' ]; then
+  # Backing configuration
+  if [ "$APKG_PKG_STATUS" = 'upgrade' ]; then
     # Saving the configuration
     echo "gitea-adm: Saving configuration (app.ini.old)..."
     cp app.ini app.ini.old
@@ -48,8 +48,8 @@ docker pull gitea/gitea:$GITEA_VERSION
 echo "gitea-adm: Creating container"
 docker create -i -t --name=$GITEA_CONTAINER \
   --publish 3122:22 --publish 3100:3000 \
-  --env GITEA__server__PROTOCOL=${CONFIG_PROTOCOL} \
-  --env GITEA__server__ROOT_URL=${CONFIG_URL} \
+  --env GITEA__server__PROTOCOL="${CONFIG_PROTOCOL}" \
+  --env GITEA__server__ROOT_URL="${CONFIG_URL}" \
   --env GITEA__server__CERT_FILE='/ssl/ssl.crt' \
   --env GITEA__server__KEY_FILE='/ssl/ssl.key' \
   --env USER_UID=$GITEA_UID \
@@ -62,7 +62,7 @@ docker create -i -t --name=$GITEA_CONTAINER \
 echo "gitea-adm: Installation/Update complete"
 
 # Starting container
-echo "gitea-adm: Strating container"
+echo "gitea-adm: Starting container"
 docker start $GITEA_CONTAINER
 
 exit 0

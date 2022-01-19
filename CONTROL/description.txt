@@ -3,7 +3,7 @@ Gitea current version: 1.15.10 - Work with an HTTPS connection.
 
 !!! NEW !!! : Now supports the migration from the old iGi Gitea to this one.
 
-[INFORMATIONS]
+[INFORMATION]
 This application requires a valid domain name and SSL certificate. Indeed, a Git code manager requires these fundamental elements to work properly and securely. Add your certificate and domain to ADM. It is also possible to use the default certificate of ADM and the subdomain provided by asustor see (https://www.myasustor.com/).
 
 
@@ -27,15 +27,15 @@ Gitea exposes HTTPS port 3100-tcp and SSH port 3122-tcp on your server.
 
 
 [CONFIG FILES]
-Gitea configuration files are available in the folder: "volume1/Docker/Gitea" the main configuration file is available in "Gitea/gitea/conf/app.ini".
+Gitea configuration files are available in the folder: "/volume1/Docker/Gitea" the main configuration file is available in "./gitea/conf/app.ini".
 It is necessary to restart Gitea to save the changes. If you want to change the default installation URL or disable HTTPS please refer to the [SENSITIVE CONFIG] section.
 
 
 [SENSITIVE CONFIG]
 To change the "HTTP protocol", "installation url" please follow the instructions below:
 
-1. Uninstall Gitea via APP CENTRAL, the "Docker/Gitea" folder will be automatically kept.
-2. Open the configuration file "Docker/Gitea/gitea/conf/app.ini" and configure the following parameters: PROTOCOL, ROOT_URL.
+1. Uninstall Gitea via APP CENTRAL, the "/volume1/Docker/Gitea" folder will be automatically kept.
+2. Open the configuration file "./gitea/conf/app.ini" and configure the following parameters: PROTOCOL, ROOT_URL.
 3. Save your changes and install Gitea via EndMove on APP CENTRAL.
 
 When reinstalling, your new settings will be applied to Gitea and the Docker container.
