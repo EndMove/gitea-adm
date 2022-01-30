@@ -1,3 +1,8 @@
+Version: 1.16.0.r01
+- Update, installation script improvement.
+- Gitea 1.16.0 major release notes (https://github.com/go-gitea/gitea/releases/tag/v1.16.0).
+  |=> Security fixes, stability improvements, added features and much more...
+
 Version: 1.15.10.r01
 - Update, container running user and group.
 - Add, auto-migration system for users leaving iGi's old Gitea app for this one.
