@@ -1,3 +1,7 @@
+Version: 1.16.1.r01
+- Update Gitea to 1.16.1, release notes (https://github.com/go-gitea/gitea/releases/tag/v1.16.1).
+- |-> Security flaw fix (1) & major release bugs fix (17).
+
 Version: 1.16.0.r01
 - Update, installation script improvement.
 - Gitea 1.16.0 major release notes (https://github.com/go-gitea/gitea/releases/tag/v1.16.0).
