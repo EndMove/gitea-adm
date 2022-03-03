@@ -1,7 +1,6 @@
 Gitea is an Opensource solution for lightweight and fast code hosting written in Go. It is published under the MIT license.
-Gitea current version: 1.16.1 - Work with an HTTPS connection.
+Gitea current version: 1.16.3 - Work with an HTTPS connection.
 
-!!! NEW !!! : Now supports the migration from the old iGi Gitea to this one.
 
 [INFORMATION]
 This application requires a valid domain name and SSL certificate. Indeed, a Git code manager requires these fundamental elements to work properly and securely. Add your certificate and domain to ADM. It is also possible to use the default certificate of ADM and the subdomain provided by asustor see (https://www.myasustor.com/).
