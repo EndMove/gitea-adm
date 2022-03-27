@@ -1,3 +1,6 @@
+Version: 1.16.5.r01
+- Update Gitea to 1.16.5, release notes (https://github.com/go-gitea/gitea/releases/tag/v1.16.5).
+
 Version: 1.16.3.r01
 - Update Gitea to 1.16.3, release notes (https://github.com/go-gitea/gitea/releases/tag/v1.16.3).
 - Minor bugs fixed.
