@@ -1,6 +1,6 @@
 # gitea-adm
 
-__Gitea version__: _`1.16.9`_
+__Gitea version__: _`1.17.2`_
 
 ![GitHub license](https://img.shields.io/badge/license-GPL--3.0-%23fe7d37) ![GitHub last commit](https://img.shields.io/github/last-commit/EndMove/gitea-adm)
 
@@ -16,7 +16,7 @@ This application uses the docker package available [here](https://github.com/go-
 
 ## Requirements
 
-- application docker-ce (>=20.10.2.r2) ;
+- application docker-ce (>=20.10.17.r1) ;
 - server with an x86-64 or arm64 architecture ;
 - ADM (>=3.5.0) ;
 
