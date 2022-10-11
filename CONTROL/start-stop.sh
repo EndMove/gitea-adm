@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Environment variable
-GITEA_CONTAINER=Gitea
+GITEA_CONTAINER='Gitea'
 
 case "$1" in
   start)

@@ -6,9 +6,9 @@ echo "gitea-adm: --== post-install ==--"
 GITEA_VERSION=$(cat $APKG_PKG_DIR/gitea_version)
 GITEA_DATA_PATH='/share/Docker/Gitea'
 GITEA_CONFIG_PATH='/gitea/conf'
-GITEA_CONTAINER=Gitea
-GITEA_UID=999
-GITEA_GID=999
+GITEA_CONTAINER='Gitea'
+GITEA_UID=$(id -u 'admin')
+GITEA_GID=$(id -g 'admin')
 
 # Checking the configuration to install according to the user's settings
 if [ -d ${GITEA_DATA_PATH}${GITEA_CONFIG_PATH} ]; then
