@@ -33,7 +33,7 @@ __:warning: This application is not an Android application !__
 
 ## Configuration folder
 
-This application will create a folder in `/volume1/Docker/Gitea`, this folder will contain all configuration files, and the embedded database if you use it.
+This application will create a folder in `/share/Docker/Gitea`, this folder will contain all configuration files, and the embedded database if you use it.
 
 ## Configuration
 

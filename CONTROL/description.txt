@@ -24,7 +24,7 @@ It is advisable to use an SMTP server to secure Gitea and keep your development 
 At the bottom of the configuration page you will find the administrator account configuration section, set it up properly.
 
 (-) If you fail the install...
-Turn off the application and delete the "/volume1/Docker/Gitea" folder, then start the application and repeat the configuration.
+Turn off the application and delete the "/share/Docker/Gitea" folder, then start the application and repeat the configuration.
 
 
 [PORTs]
@@ -32,7 +32,7 @@ Gitea exposes HTTPS port 3100-tcp and SSH port 3122-tcp on your server.
 
 
 [CONFIG FILES]
-Gitea configuration files are available in the folder: "/volume1/Docker/Gitea" the main configuration file is available in "./gitea/conf/app.ini". It is necessary to restart Gitea to save the changes.
+Gitea configuration files are available in the folder: "/share/Docker/Gitea" the main configuration file is available in "./gitea/conf/app.ini". It is necessary to restart Gitea to save the changes.
 
 
 [GITHUB]

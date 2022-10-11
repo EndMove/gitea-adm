@@ -4,7 +4,7 @@ echo "gitea-adm: --== post-install ==--"
 
 # Environment variables
 GITEA_VERSION=$(cat $APKG_PKG_DIR/gitea_version)
-GITEA_DATA_PATH='/volume1/Docker/Gitea'
+GITEA_DATA_PATH='/share/Docker/Gitea'
 GITEA_CONFIG_PATH='/gitea/conf'
 GITEA_CONTAINER=Gitea
 GITEA_UID=999
