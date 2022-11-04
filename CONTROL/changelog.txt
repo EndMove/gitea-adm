@@ -1,3 +1,9 @@
+Version: 1.17.3.r01
+- Update Gitea to 1.17.3, release notes (https://github.com/go-gitea/gitea/releases/tag/v1.17.3).
+- Fix now use default asustor server localtime.
+- Fix reload command typo.
+- Fix now ensures that the configuration is saved even if it is busy.
+
 Version: 1.17.2.r02
 - Fix multi volume support by jonmseaman.
 - Fix admin gid, uid auto detection.

@@ -18,7 +18,7 @@ if [ -d ${GITEA_DATA_PATH}${GITEA_CONFIG_PATH} ]; then
   if [ "$APKG_PKG_STATUS" = 'upgrade' ]; then
     # Saving the configuration
     echo "gitea-adm: Saving configuration (app.ini.old)..."
-    cp app.ini app.ini.old
+    cp -f app.ini app.ini.old
   fi
 
   # Integrity check
@@ -45,6 +45,7 @@ docker create -i -t --name=$GITEA_CONTAINER \
   --restart=unless-stopped \
   --volume $GITEA_DATA_PATH:/data \
   --volume /usr/builtin/etc/certificate/:/ssl/:ro \
+  --volume /etc/localtime:/etc/localtime:ro \
   gitea/gitea:$GITEA_VERSION
 
 echo "gitea-adm: Installation/Update complete"

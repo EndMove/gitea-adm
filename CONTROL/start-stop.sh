@@ -16,7 +16,7 @@ case "$1" in
     docker stop $GITEA_CONTAINER
     sleep 3
     ;;
-  relaod)
+  reload)
     # Reloading gitea
     echo "gitea-adm: Reloading service..."
     docker stop $GITEA_CONTAINER
