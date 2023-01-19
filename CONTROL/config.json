@@ -2,7 +2,7 @@
   "general":{
     "package":"gitea-docker",
     "name":"Gitea",
-    "version":"1.17.3.r01",
+    "version":"1.18.1.r01",
     "depends":[
       "docker-ce(>=20.10.17.r1)"
     ],
