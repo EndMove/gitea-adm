@@ -1,3 +1,7 @@
+Version: 1.18.2.r01 [CRITICAL UPDATE]
+- Update Gitea to 1.18.2, release notes (https://github.com/go-gitea/gitea/releases/tag/v1.18.2).
+- Fix critical security flaw in Git.
+
 Version: 1.18.1.r01
 - Update Gitea to 1.18.1, release notes (https://github.com/go-gitea/gitea/releases/tag/v1.18.1).
 

@@ -1,5 +1,5 @@
 Gitea est une solution Opensource d'hébergement de code léger et rapide écrite en Go. Elle est publiée sous la licence MIT.
-Version actuelle de Gitea : 1.18.1 - Fonctionne avec une connexion HTTPS.
+Version actuelle de Gitea : 1.18.2 - Fonctionne avec une connexion HTTPS.
 
 
 [INFORMATION]
