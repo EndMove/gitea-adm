@@ -2,14 +2,14 @@
   "general":{
     "package":"gitea-docker",
     "name":"Gitea",
-    "version":"1.18.2.r01",
+    "version":"1.20.4.r01",
     "depends":[
       "docker-ce(>=20.10.17.r1)"
     ],
     "developer":"Gitea",
     "maintainer":"EndMove",
     "email":"contact@endmove.eu",
-    "website":"https://gitea.io/",
+    "website":"https://gitea.com/",
     "architecture":"x86-64",
     "firmware":"3.5.0"
   },
