@@ -2,6 +2,13 @@ Version: 1.20.4.r01
 - Update Gitea to 1.20.4, release notes (https://github.com/go-gitea/gitea/releases/tag/v1.20.4).
 - Breaking release, please check your gitea config to update some depreciated properties (see the admin page)
 
+Version: 1.18.2.r01 [CRITICAL UPDATE]
+- Update Gitea to 1.18.2, release notes (https://github.com/go-gitea/gitea/releases/tag/v1.18.2).
+- Fix critical security flaw in Git.
+
+Version: 1.18.1.r01
+- Update Gitea to 1.18.1, release notes (https://github.com/go-gitea/gitea/releases/tag/v1.18.1).
+
 Version: 1.17.3.r01
 - Update Gitea to 1.17.3, release notes (https://github.com/go-gitea/gitea/releases/tag/v1.17.3).
 - Fix now use default asustor server localtime.
