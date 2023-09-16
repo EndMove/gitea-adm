@@ -1,6 +1,6 @@
 # gitea-adm
 
-__Gitea version__: _`1.17.3`_
+__Gitea version__: _`1.20.4`_
 
 ![GitHub license](https://img.shields.io/badge/license-GPL--3.0-%23fe7d37) ![GitHub last commit](https://img.shields.io/github/last-commit/EndMove/gitea-adm)
 
