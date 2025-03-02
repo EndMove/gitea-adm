@@ -33,8 +33,8 @@
       }           
     ],
     "boot-priority":{
-      "start-order":60,
-      "stop-order":40
+      "start-order":70,
+      "stop-order":30
     },
     "port":[
       "T3100",
