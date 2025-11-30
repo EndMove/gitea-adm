@@ -4,6 +4,7 @@ Version 1.25.2.r01
 - Multiple SECURITY fixes.
 - Some feature improvements.
 
+Version 1.23.4.r01
 - Update Gitea to 1.23.4, release notes (https://github.com/go-gitea/gitea/releases/tag/v1.23.4).
 - Breaking release, please check your gitea config to update some depreciated properties (see the admin page)
 - Change boot priority to avoid issue with docker-engine.
