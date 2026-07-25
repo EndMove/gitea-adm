@@ -1,3 +1,6 @@
+Version 1.27.0.r01
+- Update Gitea to 1.27.0, release notes (https://github.com/go-gitea/gitea/releases/tag/v1.27.0).
+
 Version 1.25.2.r01
 - Update Gitea to 1.25.2, release notes (https://github.com/go-gitea/gitea/releases/tag/v1.25.2).
 - Breaking release, please check your gitea config to update some depreciated properties (see the admin page)
