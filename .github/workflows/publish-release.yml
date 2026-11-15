@@ -61,6 +61,6 @@ jobs:
         run: |
           version=$(jq -r '.general.version' CONTROL/config.json)
           gh release create "$version" dist/*.apk dist/SHA256SUMS \
-            --target "$GITHUB_SHA" --title "Gitea $version" \
-            --notes-file dist/release-notes.md --draft
+            --target "$GITHUB_SHA" --title "Gitea $version for ADM" \
+            --generate-notes --draft
           gh release edit "$version" --draft=false
