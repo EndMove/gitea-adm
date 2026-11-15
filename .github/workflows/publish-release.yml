@@ -1,0 +1,66 @@
+name: Publish release
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: publish-release
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: >-
+      github.repository == 'EndMove/gitea-adm' &&
+      github.actor == 'EndMove' && github.triggering_actor == 'EndMove' &&
+      github.ref == 'refs/heads/master'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-python@v7.1.0
+        with:
+          python-version: '3.x'
+      - name: Install packaging dependency
+        run: sudo apt-get update && sudo apt-get install -y dos2unix
+      - name: Validate version and prepare notes
+        run: |
+          version=$(python scripts/build-package.py --metadata)
+          git ls-remote --tags origin "refs/tags/$version" > "$RUNNER_TEMP/existing-tag"
+          if [ -s "$RUNNER_TEMP/existing-tag" ]; then
+            echo "Tag $version already exists. Bump the version or revision before publishing."
+            exit 1
+          fi
+      - name: Build and verify both architectures
+        run: |
+          sudo "$(which python)" scripts/build-package.py --architecture x86-64
+          sudo "$(which python)" scripts/build-package.py --architecture arm64
+          cd dist
+          sha256sum *.apk > SHA256SUMS
+      - uses: actions/upload-artifact@v7.0.2
+        with:
+          name: release-packages
+          path: dist/
+          if-no-files-found: error
+
+  publish:
+    needs: build
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/download-artifact@v8.0.2
+        with:
+          name: release-packages
+          path: dist
+      - name: Publish GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          version=$(jq -r '.general.version' CONTROL/config.json)
+          gh release create "$version" dist/*.apk dist/SHA256SUMS \
+            --target "$GITHUB_SHA" --title "Gitea $version" \
+            --notes-file dist/release-notes.md --draft
+          gh release edit "$version" --draft=false

@@ -1,0 +1,61 @@
+name: Prepare release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Gitea version (e.g. 1.27.4)'
+        required: true
+        type: string
+      revision:
+        description: 'ASUSTOR revision'
+        default: r01
+        required: true
+        type: string
+      notes:
+        description: 'Additional changelog notes (optional)'
+        type: string
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: prepare-release
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    if: >-
+      github.repository == 'EndMove/gitea-adm' &&
+      github.actor == 'EndMove' && github.triggering_actor == 'EndMove' &&
+      github.ref == 'refs/heads/master'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - name: Bump version
+        shell: pwsh
+        env:
+          VERSION: ${{ inputs.version }}
+          REVISION: ${{ inputs.revision }}
+          NOTES: ${{ inputs.notes }}
+        run: ./scripts/Bump-Version.ps1 -Version $env:VERSION -Revision $env:REVISION -Notes $env:NOTES
+      - uses: actions/setup-python@v7.1.0
+        with:
+          python-version: '3.x'
+      - name: Validate version
+        run: python scripts/build-package.py --metadata --output "$RUNNER_TEMP/metadata"
+      - name: Open release PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ inputs.version }}
+          REVISION: ${{ inputs.revision }}
+        run: |
+          branch="release/$VERSION.$REVISION"
+          git checkout -b "$branch"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add CONTROL/config.json CONTROL/changelog.txt CONTROL/description-fr.txt CONTROL/description.txt README.md LICENSE gitea_version
+          git commit -m "feat($VERSION.$REVISION): update Gitea"
+          git push origin "$branch"
+          gh pr create --base master --head "$branch" --title "Release $VERSION.$REVISION" --body-file "$RUNNER_TEMP/metadata/release-notes.md"
